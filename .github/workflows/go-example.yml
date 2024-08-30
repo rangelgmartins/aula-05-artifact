@@ -4,12 +4,10 @@
 name: Go Hello-Server
 
 env:
-  FILE_NAME: ‘hello-server’
+  FILE_NAME: hello-server
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -25,10 +23,10 @@ jobs:
         go-version: '1.20'
 
     - name: Build
-      run: go build ./${{env.FILE_NAME}}.go
+      run: go build ${{env.FILE_NAME}}.go
 
     - name: Build Windows
-      run: GOOS=windows GOARCH=amd64 go build ./${{env.FILE_NAME}}.go
+      run: GOOS=windows GOARCH=amd64 go build ${{env.FILE_NAME}}.go
 
     - name: Upload artifact for linux
       uses: actions/upload-artifact@v1.0.0
