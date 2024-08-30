@@ -4,7 +4,7 @@
 name: Go Hello-Server
 
 env:
-FILE_NAME: ‘hello-server’
+  FILE_NAME: ‘hello-server’
 
 on:
   push:
