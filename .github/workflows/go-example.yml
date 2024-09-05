@@ -47,8 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4.1.8
-        with:
-          name: linux
+        name: linux
           
       - name: Run script
         shell: bash
@@ -61,5 +60,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4.1.8
-        with:
-          name: windows
+        name: windows
