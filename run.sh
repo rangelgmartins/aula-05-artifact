@@ -1,6 +1,6 @@
-chmod +x ./aula-05-artifact/hello-server.go
+chmod +x ./hello-server.go
 
-./aula-05-artifact/hello-server.go &
+./hello-server.go &
 
 sleep 5
 
