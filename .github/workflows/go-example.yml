@@ -49,8 +49,8 @@ jobs:
       - uses: actions/download-artifact@v4.1.8
         name: linux
       - name: Run script
-        shell: bash
-        run: source ./run.sh
+        run: |
+          source ./run.sh
 
   download-only-windows:
     name: Download Windows
