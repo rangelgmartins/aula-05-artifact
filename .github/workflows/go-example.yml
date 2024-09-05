@@ -54,7 +54,7 @@ jobs:
 
   download-only-windows:
     name: Download Windows
-    runs-on: windows latest
+    runs-on: windows-latest
     needs: build-go
     steps:
       - uses: actions/checkout@v4
