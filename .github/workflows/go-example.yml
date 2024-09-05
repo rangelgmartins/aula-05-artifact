@@ -14,8 +14,7 @@ on:
         - cron: ‘*/15 * * * 1-6’
 
 jobs:
-
-  build:
+  build-go:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -40,3 +39,23 @@ jobs:
       with:
         name: windows
         path: ./${{ env.FILE_NAME }}.exe
+
+  download-and-run-linux:
+    name: Download and run Linux
+    runs-on: ubuntu-latest
+    needs: linux
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4.1.8
+          
+      - name: Run script
+        shell: bash
+        run: source ./run.sh
+
+  download-only-windows:
+    name: Download Windows
+    runs-on: windows latest
+    needs: windows
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4.1.8
