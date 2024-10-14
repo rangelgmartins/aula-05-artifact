@@ -9,8 +9,8 @@ env:
 on:
   push:
     branches: [ "main" ]
-  schedule:
-    - cron: '*/15 * * * 1-6'
+#  schedule:
+#    - cron: '*/15 * * * 1-6'
 
 jobs:
   build-go:
